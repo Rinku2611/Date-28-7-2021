@@ -1,0 +1,178 @@
+using System;
+
+class NameAge
+{
+    
+public static void Main()
+{
+        
+Console.WriteLine("Enter name");
+      
+    string name = Console.ReadLine();
+
+    Console.WriteLine("Enter age");    
+    int age = Convert.ToInt32(Console.ReadLine());
+      
+        for(int i=0; i<age; i++)
+      
+{
+          
+    Console.WriteLine(name);
+      
+}
+      
+    
+}
+
+
+}
+
+
+2 nd Task
+using System;
+    class Multiplication
+{
+    
+    public static void Main() 
+    
+{
+      
+    Console.WriteLine("Enter number");
+      
+        int num = Convert.ToInt32(Console.ReadLine());
+      
+    for(int i=0; i<=20; i++)
+      
+{
+          
+        int total = num * i;
+          
+    Console.WriteLine(num + "*" + i + "=" + total + "N");
+      
+}
+      
+    
+}
+
+}
+
+3rd Task:
+
+using System;
+class Channel
+{
+    public static void Main() 
+    {
+      string package;
+      Console.WriteLine("Enter your package");
+      package = Console.ReadLine();
+     switch(package)
+     {
+         case"PackageA" : Console.WriteLine("The rate for the selected TV Channel Package is Rs:250");
+         break;
+         case"PackageB" : Console.WriteLine("The rate for the selected TV Channel Package is Rs:450");
+         break;
+         case"PackageC" : Console.WriteLine("The rate for the selected TV Channel Package is Rs:350");
+         break;
+         default: Console.WriteLine("Please enter the selected TV Channel Package");
+         break;
+     }
+      
+    }
+}
+
+4th task:
+using System;
+class Percent
+{
+    public static void Main()
+{
+double tot=0;
+double percent;
+int[]arr= new int[5];
+				
+		
+	Console.WriteLine("Enter your marks");
+		
+	   for(int i=0;i<5;i++)
+		
+{
+		
+	arr[i]=Convert.ToInt32(Console.ReadLine());
+		
+		
+			 
+}
+	foreach(int i in arr)
+		
+{	
+	tot=tot+i;
+}	
+		
+	percent= (tot/500)*100;
+			 
+	Console.WriteLine("percent="+percent+" total="+tot);
+				
+	}
+}
+		
+5th Task:
+using System;
+class JArray
+{
+		
+	public static void Main()
+		
+		
+			 
+{
+		
+	String [][] Prodcat = new String[3][];
+		
+	Prodcat[0] = new String[4]{"Parley-G","Monaco","Crack gack","Mari-Gold"};
+		
+	Prodcat[1] = new String[5]{"Melody","SFU","choco-luxary","Hershey","cadbury"};
+		
+	Prodcat[2] = new String[6]{"Appy","Feez","sprite","biyer","thums-up","cococola"};
+		
+		for(int i =0;i<Prodcat.Length;i++)
+		
+		
+{
+		
+	for(int j=0;j<Prodcat[i].Length;j++)
+		
+	Console.Write(Prodcat[i][j] +"\t");
+	Console.WriteLine();
+		
+}
+		
+ }
+	}
+		
+	
+
+
+	 
+			
+		
+		
+			 
+		
+		
+			 
+			
+		
+		
+			 
+			
+		
+	
+
+
+
+
+
+
+
+
