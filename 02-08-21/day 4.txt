@@ -1,0 +1,140 @@
+1st task
+
+using System;
+class Members
+{
+    public string Name;
+    public int Age;
+    public Members(string name, int age)
+    {
+      Name = name;
+      Age = age;
+      Console.WriteLine("Member name is " + Name + " & age is " + Age);
+    }
+}
+class MemberDetails
+{
+    String Mname;
+    int Mage;
+    public void MemberDetails(string MemName, int MemAge)
+    {
+        Mname = MemName;
+        Mage = MemAge;
+    }
+    public void Display()
+    {
+        Console.WriteLine($"Member Name : {Mname} and age is : {Mage}");
+    }
+    public static void Main()
+    {
+        MemberDetails md = new MemberDetails("Rachel", 24);
+        Console.WriteLine($"Member name is {md.Mname}");
+        Console.WriteLine($"Member age is {md.Mage}");
+    }
+}
+ 
+2nd task
+
+using System;
+interface Packages
+{
+    void Silver();
+    void Gold();
+    void Platinum();
+}
+class MembershipPackage : Packages
+{
+    public void Silver()
+    {
+        Console.WriteLine("You have selected Silver package.");
+        Console.WriteLine("3 days accomodation at resort");
+    }
+    public void Gold()
+    {
+        Console.WriteLine("You have selected Gold package.");
+        Console.WriteLine("5 days accomodation at resort & 2 dinners on the house ");
+    }
+    public void Platinum()
+    {
+        Console.WriteLine("You have selected Platinum package.");
+        Console.WriteLine("7 days accomodation at resort & 5 dinners on the house");
+    }
+}
+class interfaceMain
+{
+    public static void Main()
+    {
+        MembershipPackage msp = new MembershipPackage();
+        Console.WriteLine("Enter your package");
+        string pck = Console.ReadLine();
+        if(pck == "Silver")
+        {
+        msp.Silver();
+        }
+        else if (pck == "Gold")
+        {
+        msp.Gold();
+        }
+        else if (pck == "Platinum")
+        {
+        msp.Platinum();
+        }
+    }
+}
+
+3rd task
+
+using System;
+class EmployeeDetails
+{
+   
+    public int EmployeeID;
+    public string Name;
+   public string Gender;
+   public int YearsOfExperience;
+   public int Salary;
+     public EmployeeDetails(int Eid, string name, string gender, int exp, int salary)
+     {
+         EmployeeID = Eid;
+         Name = name;
+         Gender = gender;
+         YearsOfExperience = exp;
+         Salary = salary;
+     }
+}
+class EmpDepartment
+{
+    string Department;
+    public EmployeeDetails EmpDet;
+    public EmpDepartment(string dept, EmployeeDetails ed )
+    {
+        Department = dept;
+        EmpDet = ed;
+    }
+    public static void Main()
+    {
+        EmployeeDetails edet = new EmployeeDetails(01,"Ross","Male",05,50000);
+        EmpDepartment edept = new EmpDepartment("Production", edet);
+        Console.WriteLine($"EmployeeID is {edet.EmployeeID}");
+        Console.WriteLine($"Employee name is {edet.Name}");
+        Console.WriteLine($"Employee gender is {edet.Gender}");
+        Console.WriteLine($"Employee experience is {edet.YearsOfExperience}");
+        Console.WriteLine($"Employee salary is {edet.Salary}");
+        Console.WriteLine($"Employee belongs to {edept.Department} department");
+        if(edept.Department == "Sales")
+        {
+           double Bonus= ((20.0/100) * edet.Salary) ;
+           Console.WriteLine($"The bonus amount is " + Bonus);
+        }
+        else if (edept.Department == "Marketing")
+        {
+             double Bonus= ((20.0/100) * edet.Salary) ;
+           Console.WriteLine($"The bonus amount is " + Bonus);
+        }
+        else if (edept.Department == "Production")
+        {
+            double Bonus= ((10.0/100) * edet.Salary) ;
+           Console.WriteLine($"The bonus amount is " + Bonus);
+        }
+    }
+}
