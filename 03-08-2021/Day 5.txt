@@ -1,0 +1,91 @@
+
+    
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Jun28
+{​​​​​​​
+    class DesertsColl
+    {​​​​​​​
+            static void Main()
+            {​​​​​​​
+                ArrayList list = new ArrayList();
+                list.Add("White chocolate cake");
+                list.Add("Royal red velvet cake");
+                list.Add("Lemon Souffles");
+                list.Add("Chocolate mousse");
+                list.Add("Custard pudding");
+                FileStream fs = new FileStream("C:/Users/RINKU/source/repose/desert.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                StreamWriter sw = new StreamWriter(fs);
+                foreach (string s in list)
+                {​​​​​​​
+                    sw.Write(s + "\n");
+                }​​​​​​​
+                sw.Flush(); // Releases memory from RAM
+            sw.Close();
+            fs.Close();
+            FileInfo f1 = new FileInfo("C:/Users/RINKU/source/repose/desert.txt");
+            Console.WriteLine("The creation time of the file is " + f1.CreationTime +".");
+            Console.WriteLine("The length of the file is " + f1.Length + ".");
+            Console.ReadLine();
+
+
+        }​​​​​​​
+    }​​​​​​​
+}​​​​​​​
+ 
+
+Task 2nd
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Jun28
+{
+    [Serializable]
+    class Employee
+    {
+        int Id;
+        String Name;
+        String Gender;
+        int age;
+        public static void Main()
+        {
+            Employee obj = new Employee();
+            obj.Id = 101;
+            obj.Name = "Rinku";
+            obj.Gender = "female";
+            obj.age = 24;
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(@"C:/Users/RINKU/source/repose/employee.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            formatter.Serialize(stream, obj);
+            stream.Close();
+
+            stream = new FileStream(@"C:/Users/RINKU/source/repose/employee.txt", FileMode.Open, FileAccess.Read);
+            Employee objnew = (Employee)formatter.Deserialize(stream);
+            Console.WriteLine(objnew.Id);
+            Console.WriteLine(objnew.Name);
+            Console.WriteLine(objnew.Gender);
+            Console.WriteLine(objnew.age);
+            Console.ReadKey();
+           
+        }
+    }
+}
+
+
+
