@@ -1,0 +1,68 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+ </head>
+<body>
+                    <div class="form-control">
+                    <div class="form-group">
+                        <label>Enter First Number</label>
+                        <input type="text" id="Firstnum" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label>Enter Second Number</label>
+                        <input type="text" id="Secondnum" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <select id="operators">
+                            <option value="+">Addition</option>
+                            <option value="-">Subtraction</option>
+                            <option value="/">Division</option>
+                            <option value="X">Multiplication</option>
+                        </select>
+                    </div>
+                    <br />
+                    <button class="btn btn-success" onclick="Arithematic()">Submit</button>
+                    <br /><br />
+                    <label>Result:</label>
+                    <input type="text" id="result" />
+                </div>
+            
+       
+
+    <script>
+        function Arithematic() {
+            var n1, n2, operator;
+            n1 = parseFloat(document.getElementById('Firstnum').value);
+            n2 = parseFloat(document.getElementById('Secondnum').value);
+            operator = document.getElementById('operators').value;
+            if (operator === '+') {
+                document.getElementById('result').value = n1 + n2;
+            }
+
+            if (operator === '-') {
+                document.getElementById('result').value = n1 - n2;
+            }
+
+            if (operator === '/') {
+                if (n2 == 0) {
+                    document.getElementById('result').value = "Infinite";
+                }
+                else
+                    document.getElementById('result').value = n1 / n2;
+            }
+
+            if (operator === 'X') {
+                document.getElementById('result').value = n1 * n2;
+            }
+
+        }
+        var element = document.getElementById("card");
+        element.classList.add("mystyle");
+    </script>
+
+</body>
+
+</html>
